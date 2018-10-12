@@ -1,0 +1,10 @@
+{
+  "name": "mobile-detect",
+  "version": "1.0.0",
+  "description": "React component that can report the width of the window (to prevent needing nasty code)",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bucky24/mobile-detect.git"
+  }
+}

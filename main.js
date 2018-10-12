@@ -11,20 +11,19 @@ class MobileDetect extends React.Component {
 		this.handleUpdate = this.handleUpdate.bind(this);
 	}
 	
-	componentDidUpdate() {
+	componentDidMount() {
+		window.addEventListener('resize', this.handleUpdate);
 		this.handleUpdate();
 	}
 	
-	componentDidMount() {
-		this.handleUpdate();
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.handleUpdate);
 	}
 	
 	handleUpdate() {
-		if (this.div) {
-			this.setState({
-				width: this.div.getBoundingClientRect().width
-			});
-		}
+		this.setState({
+			width: window.innerWidth;
+		});
 	}
 	
 	getSize(width) {
@@ -41,9 +40,11 @@ class MobileDetect extends React.Component {
 			});
 		});
 		
-		return (<dif ref={(c) => {
-			this.div = c;
-		}}> { injectedChildren }</div>);
+		return (<div style={{
+			width: '100%',
+			height: '100%',
+			position: 'relative'
+		}}>{ injectedChildren }</div>);
 	}
 };
 

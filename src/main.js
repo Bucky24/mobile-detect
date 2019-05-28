@@ -22,7 +22,7 @@ class MobileDetect extends React.Component {
 	
 	handleUpdate() {
 		this.setState({
-			width: window.innerWidth;
+			width: window.innerWidth
 		});
 	}
 	

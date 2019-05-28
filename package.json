@@ -1,10 +1,23 @@
 {
-  "name": "mobile-detect",
-  "version": "1.0.0",
-  "description": "React component that can report the width of the window (to prevent needing nasty code)",
-  "main": "main.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Bucky24/mobile-detect.git"
-  }
+	"name": "mobile-detect",
+	"version": "1.0.0",
+	"description": "React component that can report the width of the window (to prevent needing nasty code)",
+	"main": "build/main.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Bucky24/mobile-detect.git"
+	},
+	"scripts": {
+		"clean": "rm -rf build",
+		"build": "babel src --out-dir build"
+	},
+	"author": "Bucky24",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/cli": "7.4.4",
+		"@babel/core": "7.2.2",
+		"@babel/plugin-transform-react-jsx": "7.3.0",
+		"@babel/preset-env": "7.3.1",
+		"@babel/preset-react": "7.0.0"
+	}
 }

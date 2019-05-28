@@ -27,7 +27,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var constants = {
   Sizes: {
-    Desktop: Desktop
+    Desktop: 'Desktop'
   }
 };
 

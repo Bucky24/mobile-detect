@@ -44,6 +44,10 @@ function (_React$Component) {
     _classCallCheck(this, MobileDetect);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MobileDetect).call(this, props));
+    _this.state = {
+      width: 0,
+      height: 0
+    };
     _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -63,12 +67,14 @@ function (_React$Component) {
     key: "handleUpdate",
     value: function handleUpdate() {
       this.setState({
-        width: window.innerWidth
+        width: window.innerWidth,
+        height: window.innerHeight
       });
     }
   }, {
     key: "getSize",
     value: function getSize(width) {
+      // stubbed for now
       return constants.Sizes.Desktop;
     }
   }, {
@@ -81,6 +87,7 @@ function (_React$Component) {
       var injectedChildren = _react.default.Children.map(children, function (child) {
         return _react.default.cloneElement(child, {
           width: _this2.state.width,
+          height: _this2.state.height,
           size: _this2.getSize(_this2.state.width)
         });
       });

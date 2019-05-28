@@ -9,6 +9,11 @@ const constants = {
 class MobileDetect extends React.Component {
 	constructor(props) {
 		super(props);
+		
+		this.state = {
+			width: 0,
+			height: 0
+		};
 
 		this.handleUpdate = this.handleUpdate.bind(this);
 	}
@@ -24,11 +29,13 @@ class MobileDetect extends React.Component {
 	
 	handleUpdate() {
 		this.setState({
-			width: window.innerWidth
+			width: window.innerWidth,
+			height: window.innerHeight
 		});
 	}
 	
 	getSize(width) {
+		// stubbed for now
 		return constants.Sizes.Desktop;
 	}
 	
@@ -38,6 +45,7 @@ class MobileDetect extends React.Component {
 		const injectedChildren = React.Children.map(children, (child) => {
 			return React.cloneElement(child, {
 				width: this.state.width,
+				height: this.state.height,
 				size: this.getSize(this.state.width)
 			});
 		});

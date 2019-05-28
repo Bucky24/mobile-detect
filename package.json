@@ -1,6 +1,6 @@
 {
 	"name": "mobile-detect",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "React component that can report the width of the window (to prevent needing nasty code)",
 	"main": "build/main.js",
 	"repository": {

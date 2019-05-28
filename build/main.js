@@ -19,6 +19,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
@@ -36,13 +38,14 @@ var MobileDetect =
 function (_React$Component) {
   _inherits(MobileDetect, _React$Component);
 
-  function MobileDetect() {
+  function MobileDetect(props) {
     var _this;
 
     _classCallCheck(this, MobileDetect);
 
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(MobileDetect).call(this, props));
     _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
-    return _possibleConstructorReturn(_this);
+    return _this;
   }
 
   _createClass(MobileDetect, [{

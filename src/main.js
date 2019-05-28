@@ -7,7 +7,9 @@ const constants = {
 }
 
 class MobileDetect extends React.Component {
-	constructor() {
+	constructor(props) {
+		super(props);
+
 		this.handleUpdate = this.handleUpdate.bind(this);
 	}
 	

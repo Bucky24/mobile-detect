@@ -1,6 +1,6 @@
 import React from 'react';
 
-const constants = {
+export const Constants = {
 	Sizes: {
 		Desktop: 'Desktop'
 	}
@@ -36,7 +36,7 @@ class MobileDetect extends React.Component {
 	
 	getSize(width) {
 		// stubbed for now
-		return constants.Sizes.Desktop;
+		return Constants.Sizes.Desktop;
 	}
 	
 	render() {
@@ -57,7 +57,5 @@ class MobileDetect extends React.Component {
 		}}>{ injectedChildren }</div>);
 	}
 };
-
-MobileDetect.Constants = constants;
 
 export default MobileDetect;

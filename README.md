@@ -16,12 +16,16 @@ import { SizeProvider } from '@bucky24/mobile-detect';
 ReactDOM.render(<SizeProvider><App /></SizeProvider>, document.getElementById('root'));
 ```
 
-There are three main components exported by the module:
-* Mobile - only displays its contents when the window width is <= 360
-* Tablet - only displays its contents when the window width is above 360 but <= 900
-* Desktop - only displays its contents when the window width is above 900
+*NOTE* your index template will also need the meta viewport set, or it will constantly report a width of 980.
 
-## Example:
+```
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+There are three main components exported by the module:
+* Mobile - only displays its contents when the window width is <= 450
+* Tablet - only displays its contents when the window width is above 450 but <= 900
+* Desktop - only displays its contents when the window width is above 900## Example:
 
 ```
 import React from 'react';

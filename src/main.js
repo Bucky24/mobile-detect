@@ -5,7 +5,7 @@ export * from './SizeContext';
 export function Mobile({ children }) {
 	const { width } = useContext(SizeContext);
 
-	if (width <= 360) {
+	if (width <= 450) {
 		return children;
 	}
 
@@ -15,7 +15,7 @@ export function Mobile({ children }) {
 export function Tablet({ children}) {
 	const { width } = useContext(SizeContext);
 
-	if (width > 360 && width <= 900) {
+	if (width > 450 && width <= 900) {
 		return children;
 	}
 

@@ -1,61 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import SizeContext from './SizeContext';
+export * from './SizeContext';
 
-export const Constants = {
-	Sizes: {
-		Desktop: 'Desktop'
+export function Mobile({ children }) {
+	const { width } = useContext(SizeContext);
+
+	if (width <= 360) {
+		return children;
 	}
+
+	return null;
 }
 
-class MobileDetect extends React.Component {
-	constructor(props) {
-		super(props);
-		
-		this.state = {
-			width: 0,
-			height: 0
-		};
+export function Tablet({ children}) {
+	const { width } = useContext(SizeContext);
 
-		this.handleUpdate = this.handleUpdate.bind(this);
+	if (width > 360 && width <= 900) {
+		return children;
 	}
-	
-	componentDidMount() {
-		window.addEventListener('resize', this.handleUpdate);
-		this.handleUpdate();
-	}
-	
-	componentWillUnmount() {
-		window.removeEventListener('resize', this.handleUpdate);
-	}
-	
-	handleUpdate() {
-		this.setState({
-			width: window.innerWidth,
-			height: window.innerHeight
-		});
-	}
-	
-	getSize(width) {
-		// stubbed for now
-		return Constants.Sizes.Desktop;
-	}
-	
-	render() {
-		const { children } = this.props;
-		
-		const injectedChildren = React.Children.map(children, (child) => {
-			return React.cloneElement(child, {
-				width: this.state.width,
-				height: this.state.height,
-				size: this.getSize(this.state.width)
-			});
-		});
-		
-		return (<div style={{
-			width: '100%',
-			height: '100%',
-			position: 'relative'
-		}}>{ injectedChildren }</div>);
-	}
-};
 
-export default MobileDetect;
+	return null;
+}
+
+export function Desktop({ children}) {
+	const { width } = useContext(SizeContext);
+
+	if (width > 900) {
+		return children;
+	}
+
+	return null;
+}

@@ -3,9 +3,9 @@ import SizeContext from './SizeContext';
 export * from './SizeContext';
 
 export function Mobile({ children }) {
-	const { width } = useContext(SizeContext);
+	const { width, mobileSize } = useContext(SizeContext);
 
-	if (width <= 450) {
+	if (width <= mobileSize) {
 		return children;
 	}
 
@@ -13,9 +13,9 @@ export function Mobile({ children }) {
 }
 
 export function Tablet({ children}) {
-	const { width } = useContext(SizeContext);
+	const { width, mobileSize, tabletSize } = useContext(SizeContext);
 
-	if (width > 450 && width <= 900) {
+	if (width > mobileSize && width <= tabletSize) {
 		return children;
 	}
 
@@ -23,9 +23,9 @@ export function Tablet({ children}) {
 }
 
 export function Desktop({ children}) {
-	const { width } = useContext(SizeContext);
+	const { width, tabletSize } = useContext(SizeContext);
 
-	if (width > 900) {
+	if (width > tabletSize) {
 		return children;
 	}
 

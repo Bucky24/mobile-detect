@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mobile, Desktop, Tablet } from '@bucky24/mobile-detect';
+import { Mobile, Desktop, Tablet, DesktopTablet } from '@bucky24/mobile-detect';
 
 import styles from './styles.css';
 
@@ -15,5 +15,8 @@ export default function App() {
         <Mobile>
             This is mobile
         </Mobile>
+        <DesktopTablet>
+            This is desktop or tablet
+        </DesktopTablet>
 	</div>);
 }

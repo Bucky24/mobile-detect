@@ -1,6 +1,6 @@
 {
 	"name": "@bucky24/mobile-detect",
-	"version": "2.1.1",
+	"version": "2.2.0",
 	"description": "React component that can report the width of the window (to prevent needing nasty code)",
 	"main": "build/main.js",
 	"repository": {
@@ -13,7 +13,8 @@
 	"scripts": {
 		"clean": "rm -rf build",
 		"build": "babel src --out-dir build",
-		"basicExample": "webpack serve --config ./examples/basicExample/webpack.config.js"
+		"basicExample": "webpack serve --config ./examples/basicExample/webpack.config.js",
+		"publish": "npm run build && npm publish"
 	},
 	"author": "Bucky24",
 	"license": "ISC",

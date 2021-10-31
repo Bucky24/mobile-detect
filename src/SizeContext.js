@@ -4,7 +4,12 @@ const SizeContext = React.createContext({});
 
 export default SizeContext;
 
-export function SizeProvider({ children }) {
+const defaultProps = {
+    mobileSize: 450,
+    tabletSize: 900,
+}
+
+export function SizeProvider({ children, mobileSize, tabletSize }) {
     const [width, setWidth] = useState(0);
 
     const resizeListener = () => {
@@ -22,9 +27,13 @@ export function SizeProvider({ children }) {
 
     const value = {
         width,
+        mobileSize,
+        tabletSize,
     };
 
     return <SizeContext.Provider value={value}>
         {children}
     </SizeContext.Provider>
 }
+
+SizeProvider.defaultProps = defaultProps;

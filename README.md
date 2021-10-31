@@ -48,3 +48,5 @@ export default function App() {
 	</div>);
 }
 ```
+
+If you want to change the breakpoints where tablet and mobile start, you can do that by passing `mobileSize` and `tabletSize` into `SizeProvider`.

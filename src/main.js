@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import SizeContext from './SizeContext';
 export * from './SizeContext';
-export { default } from './SizeContext';
+export { default as SizeContext } from './SizeContext';
 
 export function Mobile({ children }) {
 	const { isMobile } = useContext(SizeContext);

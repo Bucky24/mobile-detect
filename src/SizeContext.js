@@ -11,12 +11,14 @@ const defaultProps = {
 
 export function SizeProvider({ children, mobileSize, tabletSize }) {
     const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const [isTablet, setIsTablet] = useState(false);
     const [isDesktop, setIsDesktop] = useState(false);
 
     const resizeListener = () => {
         setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
 
         if (window.innerWidth <= mobileSize) {
             setIsMobile(true);
@@ -44,6 +46,7 @@ export function SizeProvider({ children, mobileSize, tabletSize }) {
 
     const value = {
         width,
+        height,
         mobileSize,
         tabletSize,
         isMobile,
